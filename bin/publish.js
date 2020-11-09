@@ -74,6 +74,7 @@ module.exports = function publish(organization, environment, user, password, app
                     err && handleError(err);
                     console.log('Cleaning publish folder');
                     rmdir(newAppFolder);
+                    fs.unlinkSync(zipFile);
                     console.log('Done!');
                     process.exit(0);
                 });
